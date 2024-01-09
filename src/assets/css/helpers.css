@@ -38,3 +38,12 @@
 .btn--gray {
     @apply bg-gray-500 text-white
 }
+
+
+.img-cover {
+    @apply w-full h-full object-cover
+}
+
+.img-contain {
+    @apply w-full h-full object-contain
+}
