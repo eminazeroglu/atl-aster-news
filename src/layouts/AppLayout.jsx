@@ -11,7 +11,7 @@ function AppLayout() {
             <div className="w-[260px] shrink-0">
                 <Logo/>
                 <Navbar/>
-                <Subscription/>
+                <Subscription className="mt-[40px]"/>
             </div>
             <div className="flex-1">
                 <Header/>

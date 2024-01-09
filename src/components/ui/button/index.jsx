@@ -1,6 +1,30 @@
-function Button() {
+import classNames from "classnames";
+
+function Button(
+    {
+        children,
+        property = 'primary',
+        rounded = false,
+        size = 'md',
+        block = false,
+        onClick
+    }
+) {
     return (
-        <button></button>
+        <button
+            className={classNames([
+                'btn',
+                property ? `btn--${property}` : '',
+                `btn--${size}`,
+                {
+                    'btn--rounded': rounded,
+                    'btn--block': block,
+                }
+            ])}
+            onClick={onClick}
+        >
+            {children}
+        </button>
     );
 }
 
