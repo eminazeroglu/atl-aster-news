@@ -11,6 +11,7 @@ import { MdNature } from "react-icons/md";
 import { GiTeamUpgrade } from "react-icons/gi";
 import { useFetchCategoryList } from '../../hooks/useFetch';
 import classNames from 'classnames';
+import { NavLink } from 'react-router-dom';
 
 function Icon({ slug }) {
     const icons = {
@@ -40,7 +41,7 @@ function Navbar() {
     return (
         <div className="pr-[17px]">
             {categories.map((category, index) => (
-                <a href="#" key={index} className={classNames({
+                <NavLink to={`/search/${category.slug}`} key={index} className={classNames({
                     'flex items-center text-amberBlack h-[50px] relative pl-[33px] rounded-tr-full rounded-br-full space-x-[22px] text-[16px]': true,
                     'bg-[#e0f0f8] text-skyBlue font-bold after:content-[""] after:absolute after:left-[15px] after:size-[6px] after:rounded-full after:bg-skyBlue': index === 0
                 })}>
@@ -48,7 +49,7 @@ function Navbar() {
                         <Icon slug={category.slug} />
                     </span>
                     <span>{category.name}</span>
-                </a>
+                </NavLink>
             ))}
         </div>
     );

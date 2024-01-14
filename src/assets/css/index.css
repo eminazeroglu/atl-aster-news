@@ -1,3 +1,7 @@
 @import "tailwind.css";
 @import "font.css";
 @import "helpers.css";
+
+body {
+    @apply bg-[#F4F9F8]
+}

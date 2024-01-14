@@ -1,3 +1,5 @@
+import { objectToQueryParams } from "./helper";
+
 const baseURL = import.meta.env.VITE_API_URL;
 const request = async (url, method, params = false) => {
 
@@ -42,6 +44,6 @@ const request = async (url, method, params = false) => {
 }
 
 
-export const get = (url) => request(url, "GET")
+export const get = (url, params = false) => request(url + (params ? '?' + objectToQueryParams(params) : ''), "GET")
 export const post = (url, params) => request(url, "POST", params)
 export const destroy = (url) => request(url, "DELETE")
