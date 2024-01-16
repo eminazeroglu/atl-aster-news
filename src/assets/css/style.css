@@ -1,0 +1,7 @@
+.nav-link {
+    @apply flex items-center p-3 space-x-2 border-b-2 border-b-transparent
+}
+
+.nav-link.active {
+    @apply border-b-skyBlue
+}

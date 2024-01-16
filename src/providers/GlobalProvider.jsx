@@ -4,7 +4,19 @@ import routers from "../routers/routers";
 
 function GlobalProvider() {
 
-    const RouterComponent = () => useRoutes(routers);
+    const routerArr =  routers.map(router => {
+
+        if (router.layout === 'AppLayout') {
+            router.element = <AppLayout>
+                {router.element}
+            </AppLayout>
+        }
+    
+        return router;
+    })
+    
+
+    const RouterComponent = () => useRoutes(routerArr);
 
     return (
         <>

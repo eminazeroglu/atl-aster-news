@@ -1,7 +1,8 @@
-import { FiLogOut, FiSearch, FiUser } from 'react-icons/fi'
+import { FiLogOut, FiUser } from 'react-icons/fi'
 import Dropdown from '../ui/dropdown';
 import menus from '../../routers/menus';
 import { NavLink } from 'react-router-dom';
+import HeaderSearch from './HeaderSearch';
 
 function Header() {
 
@@ -17,15 +18,10 @@ function Header() {
     return (
         <div className="pt-[15px] pb-[40px] flex items-center justify-between">
             <div className="flex items-center space-x-6">
-                <div className="flex p-[14px] justify-between items-center bg-[#ECF5F8] w-[495px] rounded-theme">
-                    <input type="text" placeholder="Search for news..." className="bg-transparent focus:outline-none" />
-                    <span>
-                        <FiSearch />
-                    </span>
-                </div>
+                <HeaderSearch/>
                 <div className="flex items-center">
                     {menus.map((menu, index) => (
-                        <NavLink to={menu.path} className="flex items-center p-3 space-x-2" key={index}>
+                        <NavLink to={menu.path} className="nav-link" key={index}>
                             {menu.icon && (
                                 <span>
                                     {menu.icon}

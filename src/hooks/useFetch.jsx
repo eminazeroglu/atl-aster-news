@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { serviceCategoryFetchList } from "../services/category.service";
-import { serviceNewsFetchList, serviceNewsFetchRandomList } from "../services/news.service";
+import { serviceNewsFetchBySlug, serviceNewsFetchList, serviceNewsFetchRandomList } from "../services/news.service";
 import { serviceAuthorFetchList } from "../services/author.service";
 
 const useFetch = (state = false) => {
@@ -42,8 +42,8 @@ export const useFetchNewsRandomList = () => {
 export const useFetchNewsList = () => {
     const [data, fetch, loading] = useFetch([]);
 
-    const apiFetch = async () => {
-        fetch(serviceNewsFetchList, {limit: 6});
+    const apiFetch = async (params = {}) => {
+        fetch(serviceNewsFetchList, params);
     }
 
     return [data?.data || [], apiFetch, loading]
@@ -57,4 +57,24 @@ export const useFetchAuthorRandomList = () => {
     }
 
     return [data?.data || [], apiFetch, loading]
+}
+
+export const useFetchNewsSearch = () => {
+    const [data, fetch, loading] = useFetch([]);
+
+    const apiFetch = async (params) => {
+        fetch(serviceNewsFetchList, params);
+    }
+
+    return [data?.data || [], apiFetch, loading]
+}
+
+export const useFetchNewsBySlug = () => {
+    const [data, fetch, loading] = useFetch(false);
+
+    const apiFetch = async (slug) => {
+        fetch(serviceNewsFetchBySlug, slug);
+    }
+
+    return [data || false, apiFetch, loading]
 }
