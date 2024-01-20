@@ -1,9 +1,9 @@
+import Footer from "../components/common/Footer";
 import Header from "../components/common/Header";
 import Logo from "../components/common/Logo";
 import Navbar from "../components/common/Navbar";
 import RightAside from "../components/common/RightAside";
 import Subscription from "../components/widgets/subscription";
-import HomePage from "../pages/home";
 
 function AppLayout({children}) {
     return (
@@ -18,6 +18,7 @@ function AppLayout({children}) {
                 <div className="flex gap-x-[45px]">
                     <div className="flex-1">
                         {children}
+                        <Footer/>
                     </div>
                     <div className="w-[285px] shrink-0">
                         <RightAside/>
