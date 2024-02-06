@@ -46,8 +46,8 @@ function HeaderSearch() {
     }, [pathname])
 
     return (
-        <div className="relative" ref={ref}>
-            <div className="flex p-[14px] justify-between items-center bg-[#ECF5F8] w-[495px] rounded-theme">
+        <div className="relative w-full lg:w-[inital]" ref={ref}>
+            <div className="flex p-[14px] justify-between items-center bg-[#ECF5F8] dark:bg-gray-800 w-full lg:w-[495px] 2xl:w-[350px] rounded-theme">
                 <input type="text" value={text} onChange={e => setText(e.target.value)} placeholder="Search for news..." className="bg-transparent w-full focus:outline-none" />
                 <span>
                     {loading && (
@@ -59,14 +59,16 @@ function HeaderSearch() {
                         </span>
                     )}
                     {!loading && (
-                        <FiSearch />
+                        <span className="hidden lg:inline-block">
+                            <FiSearch />
+                        </span>
                     )}
                 </span>
             </div>
 
-            <div className="absolute bg-white z-50 shadow-theme top-full left-0 right-0">
+            <div className="absolute dark:bg-gray-800 bg-white z-50 shadow-theme top-full left-0 right-0">
                 {(news && !notFound) && (
-                    <ul className="divide-y divide-gray-100">
+                    <ul className="divide-y dark:divide-gray-700 divide-gray-100">
                         {news.map((item, index) => (
                             <li key={index}>
                                 <Link to={`/view/${item.slug}`} className="flex p-2 items-center space-x-3">

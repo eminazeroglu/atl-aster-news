@@ -1,5 +1,5 @@
 .btn {
-    @apply inline-flex px-[25px] justify-center items-center
+    @apply inline-flex px-[25px] justify-center items-center shrink-0 disabled:opacity-45
 }
 
 .btn--md {

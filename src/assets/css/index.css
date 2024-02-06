@@ -1,6 +1,8 @@
 @import "tailwind.css";
 @import "font.css";
 @import "helpers.css";
+@import "ant.design.css";
+@import "dark.css";
 @import "style.css";
 
 body {

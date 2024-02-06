@@ -3,6 +3,7 @@ import AboutPage from "../pages/about";
 import ContactPage from "../pages/contact";
 import SearchPage from "../pages/search";
 import ViewPage from "../pages/view";
+import AuthorPage from "../pages/author";
 
 const routers = [
     {
@@ -33,6 +34,12 @@ const routers = [
         path: '/view/:slug',
         name: 'view',
         element: <ViewPage/>,
+        layout: 'AppLayout'
+    },
+    {
+        path: '/author/:slug',
+        name: 'author',
+        element: <AuthorPage/>,
         layout: 'AppLayout'
     }
 ];

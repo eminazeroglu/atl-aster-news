@@ -1,3 +1,7 @@
+body.dark {
+    @apply bg-gray-900
+}
+
 .nav-link {
     @apply flex items-center p-3 space-x-2 border-b-2 border-b-transparent
 }

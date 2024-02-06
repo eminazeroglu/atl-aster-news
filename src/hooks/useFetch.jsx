@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { serviceCategoryFetchList } from "../services/category.service";
-import { serviceNewsFetchBySlug, serviceNewsFetchList, serviceNewsFetchRandomList } from "../services/news.service";
+import { serviceNewsFetchBySlug, serviceNewsFetchComments, serviceNewsFetchList, serviceNewsFetchRandomList } from "../services/news.service";
 import { serviceAuthorFetchList } from "../services/author.service";
 
 const useFetch = (state = false) => {
@@ -25,7 +25,7 @@ export const useFetchCategoryList = () => {
         fetch(serviceCategoryFetchList, params);
     }
 
-    return [data, apiFetch, loading]
+    return [data || [], apiFetch, loading]
 }
 
 // Random News Fetch
@@ -46,7 +46,7 @@ export const useFetchNewsList = () => {
         fetch(serviceNewsFetchList, params);
     }
 
-    return [data?.data || [], apiFetch, loading]
+    return [data?.data || [], apiFetch, loading, data?.total]
 }
 
 export const useFetchAuthorRandomList = () => {
@@ -77,4 +77,14 @@ export const useFetchNewsBySlug = () => {
     }
 
     return [data || false, apiFetch, loading]
+}
+
+export const useFetchNewsComments = () => {
+    const [data, fetch, loading] = useFetch(false);
+
+    const apiFetch = async (id) => {
+        fetch(serviceNewsFetchComments, id);
+    }
+
+    return [data || [], apiFetch, loading]
 }

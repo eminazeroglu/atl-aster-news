@@ -7,7 +7,7 @@ export default [
         icon: <FiHome/>,
     },
     {
-        name: 'Haqqımızda',
+        name: 'Yazarlar',
         path: '/about',
         icon: <FiInfo/>,
     },

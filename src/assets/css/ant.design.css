@@ -1,0 +1,40 @@
+.ant-switch {
+    @apply !bg-gray-300
+}
+
+.ant-switch-inner-unchecked {
+    @apply !text-black
+}
+
+.ant-switch-checked {
+    @apply dark:!bg-gray-600
+}
+
+.ant-switch-checked .ant-switch-handle::before {
+    @apply dark:!bg-gray-400
+}
+
+.ant-modal-footer {
+    @apply hidden
+}
+
+.ant-modal-content, .ant-modal-header {
+    @apply dark:bg-gray-800 dark:text-white !p-0
+}
+
+.ant-modal-header .ant-modal-title {
+    @apply dark:text-white
+}
+
+.ant-modal-header {
+    border-bottom: 1px solid theme('colors.gray.200') !important;
+    @apply !px-[24px] !py-[14px] !mb-0 dark:!border-gray-600
+}
+
+.ant-modal-body {
+    @apply !px-[24px] !py-[14px]
+}
+
+.ant-modal-close {
+    @apply dark:text-white dark:hover:bg-gray-500 dark:hover:text-white
+}

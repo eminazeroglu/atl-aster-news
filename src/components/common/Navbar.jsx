@@ -45,8 +45,8 @@ function Navbar() {
         <div className="pr-[17px]">
             {categories.map((category, index) => (
                 <NavLink to={route('search', {slug: category.slug})} key={index} className={classNames({
-                    'flex items-center text-amberBlack h-[50px] relative pl-[33px] rounded-tr-full rounded-br-full space-x-[22px] text-[16px]': true,
-                    'bg-[#e0f0f8] text-skyBlue font-bold after:content-[""] after:absolute after:left-[15px] after:size-[6px] after:rounded-full after:bg-skyBlue': slug === category.slug
+                    'flex items-center text-amberBlack h-[50px] relative pl-[33px] rounded-tr-full rounded-br-full space-x-[22px] text-[16px] dark:text-gray-300': true,
+                    'bg-[#e0f0f8] dark:bg-gray-800 dark:!text-white text-skyBlue font-bold after:content-[""] after:absolute after:left-[15px] after:size-[6px] after:rounded-full after:bg-skyBlue': slug === category.slug
                 })}>
                     <span className="text-[24px]">
                         <Icon slug={category.slug} />

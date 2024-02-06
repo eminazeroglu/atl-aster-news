@@ -1,6 +1,6 @@
 function RightAside() {
     return (
-        <div>
+        <div className="fixed">
             Right Aside
         </div>
     );

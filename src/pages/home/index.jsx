@@ -10,19 +10,18 @@ function HomePage() {
     const [newsItems, fetchNews, newsLoading] = useFetchNewsList();
     const [authors, fetchAuthors, authorLoading] = useFetchAuthorRandomList();
 
-
     useEffect(() => {
         fetchRandomNews();
         fetchNews({ limit: 6 });
         fetchAuthors();
     }, [])
 
-
     return (
         <>
             <Helmet>
                 <title>Aster News</title>
             </Helmet>
+
             <NewsSection
                 loading={randomLoading}
                 items={randomNews}

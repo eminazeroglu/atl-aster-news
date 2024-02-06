@@ -3,16 +3,22 @@ import classNames from "classnames";
 function Button(
     {
         children,
+        type = 'button',
         property = 'primary',
         rounded = false,
         size = 'md',
         block = false,
-        onClick
+        onClick,
+        className,
+        loading = false
     }
 ) {
     return (
         <button
+            type={type}
+            disabled={loading}
             className={classNames([
+                className || '',
                 'btn',
                 property ? `btn--${property}` : '',
                 `btn--${size}`,
@@ -23,7 +29,7 @@ function Button(
             ])}
             onClick={onClick}
         >
-            {children}
+            {loading ? '...' : children}
         </button>
     );
 }

@@ -1,3 +1,5 @@
+import store from "../store";
+import { setFormErrors } from "../store/app";
 import { objectToQueryParams } from "./helper";
 
 const baseURL = import.meta.env.VITE_API_URL;
@@ -21,6 +23,8 @@ const request = async (url, method, params = false) => {
 
     if (params) options.body = JSON.stringify(params)
 
+    store.dispatch(setFormErrors(false))
+    
     const api = await fetch(baseURL + url, options)
 
     if (api.ok) {
@@ -36,7 +40,9 @@ const request = async (url, method, params = false) => {
         return false;
     }
     else if (api.status === 422) {
-        return {status: 422, message: await api.json()}
+        const data = await api.json();
+        store.dispatch(setFormErrors(data))
+        return {status: 422}
     }
     else {
         return {status: 500}

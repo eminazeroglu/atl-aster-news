@@ -1,6 +1,6 @@
 function Footer() {
     return (
-        <footer className="mt-[54px] flex items-center text-[12px] justify-between text-[#95a8b3] py-[23px] border-t border-gray-300">
+        <footer className="mt-[54px] flex items-center text-[12px] justify-between text-[#95a8b3] py-[23px] dark:border-gray-700 border-t border-gray-300">
             <div>
                 <span>© Aster News, 2022</span>
             </div>

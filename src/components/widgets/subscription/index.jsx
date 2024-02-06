@@ -2,7 +2,7 @@ import { FiGift } from 'react-icons/fi'
 import Button from '../../ui/button';
 function Subscription({ className }) {
     return (
-        <div className={`bg-skyBlue p-[20px] rounded-theme text-white ml-[16px] ${className || ''}`}>
+        <div className={`bg-skyBlue p-[20px] rounded-theme text-white lg:ml-[16px] ${className || ''}`}>
             <div className="flex items-center mb-[13px] justify-between">
                 <FiGift className="text-[24px]" />
                 <span>Subscribe to Premium</span>

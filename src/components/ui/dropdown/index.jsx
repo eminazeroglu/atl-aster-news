@@ -41,7 +41,7 @@ function Dropdown({children, helperBlock, onItemClick, items = []}) {
             <div
                 id="dropdown"
                 className={classNames({
-                    'z-10 bg-white divide-y absolute top-full right-5 divide-gray-100 rounded-lg shadow w-44': true,
+                    'z-10 bg-white overflow-hidden dark:bg-gray-800 divide-y absolute top-full right-5 dark:!divide-gray-700 divide-gray-100 rounded-lg shadow w-44': true,
                     'hidden': !open
                 })}
             >
@@ -55,7 +55,7 @@ function Dropdown({children, helperBlock, onItemClick, items = []}) {
                             <li key={index}>
                                 <button
                                     onClick={() => onItemClick(item)}
-                                    className="flex w-full hover:bg-gray-100 items-center space-x-2 px-4 py-2 "
+                                    className="flex w-full dark:hover:bg-gray-700 hover:bg-gray-100 items-center space-x-2 px-4 py-2 "
                                 >
                                     {item?.icon && (
                                         <span>

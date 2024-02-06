@@ -3,9 +3,10 @@ import Section from "@/components/ui/section";
 import NewsItem from "@/components/widgets/news/NewsItem";
 
 function NewsSection({ items, loading, title }) {
+    
     return (
         <Section title={title}>
-            <div className="grid grid-cols-2 gap-[20px]">
+            <div className="grid lg:grid-cols-3 grid-cols-1 gap-[20px] dark-mode">
                 {loading && (
                     <>
                         <NewsSkelaton />
