@@ -12,7 +12,7 @@ function AppLayout({ children }) {
         <main className="w-full overflow-x-hidden pt-[75px] pb-[75px] lg:pt-0 lg:pb-0 2xl:w-[1360px] mx-auto lg:flex lg:gap-x-[45px]">
             {!isMobile && (
                 <div className="w-[260px] shrink-0">
-                    <div className="fixed">
+                    <div className="fixed overflow-x-auto max-h-screen w-[260px] pr-3 pb-5">
                         <Logo />
                         <Navbar />
                         <Subscription className="mt-[40px]" />

@@ -1,30 +1,32 @@
 import { useEffect } from 'react';
-import { GiWorld } from "react-icons/gi";
 import { FaFileContract } from "react-icons/fa";
 import { MdOutlineSportsBasketball } from "react-icons/md";
 import { FaRobot } from "react-icons/fa";
-import { GiTakeMyMoney } from "react-icons/gi";
 import { SiAmazongames } from "react-icons/si";
 import { MdHealthAndSafety } from "react-icons/md";
 import { MdOutlineScience } from "react-icons/md";
 import { MdNature } from "react-icons/md";
-import { GiTeamUpgrade } from "react-icons/gi";
 import { useFetchCategoryList } from '../../hooks/useFetch';
+import { BiWorld } from "react-icons/bi";
 import classNames from 'classnames';
 import { NavLink, useParams } from 'react-router-dom';
 import { route } from '../../utils/helper';
+import { RiMoneyDollarCircleLine } from "react-icons/ri";
+import { MdOutlineAgriculture } from "react-icons/md";
+
+
 
 function Icon({ slug }) {
     const icons = {
-        "world": <GiWorld />,
+        "world": <BiWorld />,
         "politics": <FaFileContract />,
         "sports": <MdOutlineSportsBasketball />,
         "technology": <FaRobot />,
-        "economy": <GiTakeMyMoney />,
+        "economy": <RiMoneyDollarCircleLine />,
         "entertainment": <SiAmazongames />,
         "health": <MdHealthAndSafety />,
         "science": <MdOutlineScience />,
-        "culture": <GiTeamUpgrade />,
+        "culture": <MdOutlineAgriculture />,
         "environment": <MdNature />
     }
     return icons[slug] || false

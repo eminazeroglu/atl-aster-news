@@ -1,0 +1,10 @@
+{
+    "menu": {
+        "home": "Home",
+        "author": "Author",
+        "contact": "Contact"
+    },
+    "button": {
+        "login": "Login"
+    }
+}

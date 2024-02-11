@@ -2,17 +2,17 @@ import {FiHome, FiInfo, FiPhone} from 'react-icons/fi'
 
 export default [
     {
-        name: 'Ana Səhifə',
+        name: 'menu.home',
         path: '/',
         icon: <FiHome/>,
     },
     {
-        name: 'Yazarlar',
-        path: '/about',
+        name: 'menu.author',
+        path: '/author',
         icon: <FiInfo/>,
     },
     {
-        name: 'Əlaqə',
+        name: 'menu.contact',
         path: '/contact',
         icon: <FiPhone/>,
     }

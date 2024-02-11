@@ -2,7 +2,7 @@ import { useClickAway } from "@uidotdev/usehooks";
 import classNames from "classnames";
 import { useState } from "react";
 
-function Dropdown({children, helperBlock, onItemClick, items = []}) {
+function Dropdown({children, dropdownClass, helperBlock, onItemClick, items = []}) {
 
     const [open, setOpen] = useState(false);
 
@@ -40,10 +40,12 @@ function Dropdown({children, helperBlock, onItemClick, items = []}) {
 
             <div
                 id="dropdown"
-                className={classNames({
-                    'z-10 bg-white overflow-hidden dark:bg-gray-800 divide-y absolute top-full right-5 dark:!divide-gray-700 divide-gray-100 rounded-lg shadow w-44': true,
-                    'hidden': !open
-                })}
+                className={classNames([
+                    `z-10 bg-white overflow-hidden dark:bg-gray-800 divide-y absolute top-full right-5 dark:!divide-gray-700 divide-gray-100 rounded-lg shadow w-44 ${dropdownClass}`,
+                    {
+                        'hidden': !open
+                    }
+                ])}
             >
                 {helperBlock}
                 {items.length > 0 && (

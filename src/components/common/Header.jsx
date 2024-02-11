@@ -7,13 +7,13 @@ import HeaderDarkMode from './HeaderDarkMode';
 import { useContextAuth } from '../../context/AuthContext';
 import Button from '../ui/button';
 import LoginModal from '../../modals/LoginModal';
-import { useState } from 'react';
 import { useContextModal } from '../../context/ModalContext';
-import RegisterModal from '../../modals/RegisterModal';
+import HeaderLanguage from './HeaderLanguage';
+import { translate } from '../../utils/helper';
 
 function Header() {
 
-    const { token, user, handleLogout } = useContextAuth();
+    const { token, handleLogout } = useContextAuth();
     const {handleModal} = useContextModal();
 
     const profileMenus = [
@@ -39,12 +39,13 @@ function Header() {
                                     {menu.icon}
                                 </span>
                             )}
-                            <span>{menu.name}</span>
+                            <span>{translate(menu.name)}</span>
                         </NavLink>
                     ))}
                 </div>
             </div>
             <div className="flex items-center">
+                <HeaderLanguage/>
                 <HeaderDarkMode />
                 {token && (
                     <Dropdown
@@ -65,13 +66,13 @@ function Header() {
                             <span className="text-[24px]">
                                 <FiUser />
                             </span>
-                            <span>My Profile</span>
+                            <span>{translate('header.my-profile')}</span>
                         </span>
                     </Dropdown>
                 )}
                 {!token && (
                     <Button onClick={() => handleModal('login', 'Login Modal')} property='sky-blue' className="ml-4" rounded={true}>
-                        Daxil ol
+                        {translate('button.login')}
                     </Button>
                 )}
             </div>

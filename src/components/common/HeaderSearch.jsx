@@ -47,7 +47,7 @@ function HeaderSearch() {
 
     return (
         <div className="relative w-full lg:w-[inital]" ref={ref}>
-            <div className="flex p-[14px] justify-between items-center bg-[#ECF5F8] dark:bg-gray-800 w-full lg:w-[495px] 2xl:w-[350px] rounded-theme">
+            <div className="flex p-[14px] justify-between items-center bg-[#ECF5F8] dark:bg-gray-800 w-full lg:w-[395px] 2xl:w-[350px] rounded-theme">
                 <input type="text" value={text} onChange={e => setText(e.target.value)} placeholder="Search for news..." className="bg-transparent w-full focus:outline-none" />
                 <span>
                     {loading && (

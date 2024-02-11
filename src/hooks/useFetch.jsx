@@ -59,6 +59,16 @@ export const useFetchAuthorRandomList = () => {
     return [data?.data || [], apiFetch, loading]
 }
 
+export const useFetchAuthorList = () => {
+    const [data, fetch, loading] = useFetch([]);
+
+    const apiFetch = async () => {
+        fetch(serviceAuthorFetchList, {limit: 20});
+    }
+
+    return [data?.data || [], apiFetch, loading, data.total]
+}
+
 export const useFetchNewsSearch = () => {
     const [data, fetch, loading] = useFetch([]);
 

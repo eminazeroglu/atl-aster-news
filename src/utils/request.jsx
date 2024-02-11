@@ -10,6 +10,7 @@ const request = async (url, method, params = false) => {
     let headers = {
         Accept: 'application/json',
         'Content-Type': 'application/json',
+        'Language': store.getState().app.language
     };
 
     if (token) {

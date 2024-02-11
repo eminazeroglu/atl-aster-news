@@ -1,0 +1,10 @@
+{
+    "menu": {
+        "home": "Ana səhifə",
+        "author": "Yazarlar",
+        "contact": "Əlaqə"
+    },
+    "button": {
+        "login": "Daxil ol"
+    }
+}
